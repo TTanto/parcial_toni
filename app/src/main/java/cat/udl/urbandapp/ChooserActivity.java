@@ -26,6 +26,9 @@ public class ChooserActivity extends AppCompatActivity {
         comprovarToken();
 
         //TODO: Arreglar los errores
+
+        //Mismatching dels id's en el layout
+        //Valors cambiats per al seu funcionament
         registerButton = findViewById(R.id.buttonRegister);
         loginButton = findViewById(R.id.buttonLogin);
 

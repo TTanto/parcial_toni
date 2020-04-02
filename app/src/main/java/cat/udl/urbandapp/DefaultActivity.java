@@ -29,6 +29,9 @@ public class DefaultActivity extends AppCompatActivity {
         this.mPreferences = PreferencesProvider.providePreferences();
         mbienvenida = findViewById(R.id.bienvenidaText);
 
+        //No s'havia inicialitzat el userViewModel
+        userViewModel = new UserViewModel(getApplication());
+
         //TODO: Encuentra y soluciona el error
 
         userViewModel.getResponseLiveDataUser().observe(this, new Observer<User>() {
@@ -37,7 +40,7 @@ public class DefaultActivity extends AppCompatActivity {
                 //mPreferences.edit().putString("token",s).apply();
                 Log.d("DefaultActivity","Tenim user " + s.toString());
                 mbienvenida.setText("Bienvenido usuario: " + s.getUsername());
-               // Intent da = new Intent(LoginActivity.this,DefaultActivity.class);
+                // Intent da = new Intent(LoginActivity.this,DefaultActivity.class);
                 //startActivity(da);
                 //Toast.makeText(LoginActivity.this, s, Toast.LENGTH_LONG).show();
             }
